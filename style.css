@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    /*--------- Primary colors ---------*/
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /*--------- Neutral colors ---------*/
+    --veryDarkBlueMain: hsl(217, 54%, 11%);
+    --veryDarkBlueCard: hsl(216, 50%, 16%);
+    --veryDarkBlueLine: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 100%;
+    font-weight: 300;
+    background-color: var(--veryDarkBlueMain);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    background-color: var(--veryDarkBlueCard);
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.card-image {
+    height: 300px;
+    cursor: pointer;
+    position: relative;
+}
+
+.ETH-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.view-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity .2s;
+}
+
+.card-image:hover .view-img {
+    opacity: 1;
+}
+
+.card-image::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--cyan);
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.card-image:hover::after {
+    opacity: .6;
+}
+
+.item-title {
+    display: inline-block;
+    margin: 20px 0;
+    color: var(--white);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.item-title:hover {
+    color: var(--cyan);
+}
+
+.item-description {
+    color: var(--softBlue);
+    font-weight: 300;
+}
+
+.item-price {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.item-price span {
+    display: flex;
+    align-items: center;
+}
+
+.item-price img {
+    margin-right: 10px;
+}
+
+.item-eth {
+    color: var(--cyan);
+    letter-spacing: 1px;
+}
+
+.item-expire {
+    color: var(--softBlue);
+}
+
+.card-line {
+    height: 1px;
+    width: 100%;
+    background-color: var(--softBlue);
+}
+
+.card-creator {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.creator-img {
+    width: 35px;
+    border: 1px solid var(--softBlue);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.creator-text {
+    color: var(--softBlue);
+    letter-spacing: 1px;
+}
+
+.creator-link {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.creator-link:hover {
+    color: var(--cyan);
+}
